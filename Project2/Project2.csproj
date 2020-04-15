@@ -151,6 +151,10 @@
     <Content Include="Content\Images\Kids Fashion\Crochet_dress.jpg" />
     <Content Include="Content\Images\Kids Fashion\embroidered_sleeveless_dress.jpg" />
     <Content Include="Content\Images\Kids Fashion\O-neck_Clothing_Shorts_Suit_2Pcs.jpg" />
+    <Content Include="Content\Images\Men%27s Fashion\Andora_Gabardine_PocketLinenPants _Black.jpg" />
+    <Content Include="Content\Images\Men%27s Fashion\BigSize_Jacket_Spring_Casual.jpg" />
+    <Content Include="Content\Images\Men%27s Fashion\DenimCotton_JacketCasual_JacketLoose.jpg" />
+    <Content Include="Content\Images\Men%27s Fashion\Reserved_Cuffed_Sweatpants_Grey.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -189,7 +193,6 @@
     <Folder Include="Content\Images\Food\" />
     <Folder Include="Content\Images\Health_Makeup\" />
     <Folder Include="Content\Images\Home_Office\" />
-    <Folder Include="Content\Images\Men%27s Fashion\" />
     <Folder Include="Content\Images\Women Fashion\" />
   </ItemGroup>
   <ItemGroup>
