@@ -147,6 +147,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Kids Fashion\Blouse_Pink_Offscholder.jpg" />
+    <Content Include="Content\Images\Kids Fashion\Crochet_dress.jpg" />
+    <Content Include="Content\Images\Kids Fashion\embroidered_sleeveless_dress.jpg" />
+    <Content Include="Content\Images\Kids Fashion\O-neck_Clothing_Shorts_Suit_2Pcs.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -181,6 +185,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\Electronics\" />
+    <Folder Include="Content\Images\Food\" />
+    <Folder Include="Content\Images\Health_Makeup\" />
+    <Folder Include="Content\Images\Home_Office\" />
+    <Folder Include="Content\Images\Men%27s Fashion\" />
+    <Folder Include="Content\Images\Women Fashion\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
