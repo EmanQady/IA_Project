@@ -12,8 +12,6 @@ namespace Project2.Models
     public class Product
     {
 
-        //ya Emyyy Hellooo wa74tiiny
-
         [Key]
         [Column("id")]
         public int Id { get; set; }
