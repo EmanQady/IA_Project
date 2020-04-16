@@ -149,6 +149,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\Electronics\NikonCamera_D3500_DSLR.jpg" />
     <Content Include="Content\Images\Electronics\SmartTV_Android2.jpg" />
+    <Content Include="Content\Images\Health_Makeup\Eyeshadow Palette - 415.jpg" />
+    <Content Include="Content\Images\Health_Makeup\Luna Tri Care_NonAlcoholic_Mouthwash.jpg" />
+    <Content Include="Content\Images\Health_Makeup\L_Oreal Paris_Mascara.jpg" />
+    <Content Include="Content\Images\Health_Makeup\Matt Lip Gloss - Ice rose.jpg" />
+    <Content Include="Content\Images\Health_Makeup\Nivea_Natural_Fairness.jpg" />
+    <Content Include="Content\Images\Health_Makeup\Paradontax Whitening Toothpaste.jpg" />
     <Content Include="Content\Images\Kids Fashion\Blouse_Pink_Offscholder.jpg" />
     <Content Include="Content\Images\Kids Fashion\Crochet_dress.jpg" />
     <Content Include="Content\Images\Kids Fashion\embroidered_sleeveless_dress.jpg" />
@@ -192,7 +198,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\Food\" />
-    <Folder Include="Content\Images\Health_Makeup\" />
     <Folder Include="Content\Images\Home_Office\" />
     <Folder Include="Content\Images\Women Fashion\" />
   </ItemGroup>
