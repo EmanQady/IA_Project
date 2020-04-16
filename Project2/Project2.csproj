@@ -155,6 +155,10 @@
     <Content Include="Content\Images\Health_Makeup\Matt Lip Gloss - Ice rose.jpg" />
     <Content Include="Content\Images\Health_Makeup\Nivea_Natural_Fairness.jpg" />
     <Content Include="Content\Images\Health_Makeup\Paradontax Whitening Toothpaste.jpg" />
+    <Content Include="Content\Images\Home_Office\beanbags.jpg" />
+    <Content Include="Content\Images\Home_Office\laserjet_printer.jpg" />
+    <Content Include="Content\Images\Home_Office\rango_bed_sofa.jpg" />
+    <Content Include="Content\Images\Home_Office\wooden_rocking_chair.jpg" />
     <Content Include="Content\Images\Kids Fashion\Blouse_Pink_Offscholder.jpg" />
     <Content Include="Content\Images\Kids Fashion\Crochet_dress.jpg" />
     <Content Include="Content\Images\Kids Fashion\embroidered_sleeveless_dress.jpg" />
@@ -198,7 +202,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\Food\" />
-    <Folder Include="Content\Images\Home_Office\" />
     <Folder Include="Content\Images\Women Fashion\" />
   </ItemGroup>
   <ItemGroup>
