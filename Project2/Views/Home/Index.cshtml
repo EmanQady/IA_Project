@@ -1,4 +1,70 @@
-﻿@{
-    ViewBag.Title = "Home";
+﻿@model IEnumerable<Project2.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    .grid-container {
+        display: grid;
+        grid-gap: 50px;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+    }
+
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgb(128, 128, 128);
+        padding: 20px;
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
+
+<center>
+    <h1>Online Market</h1>
+    <br /><br />
+
+    @using (@Html.BeginForm("Index", "Home", FormMethod.Post, htmlAttributes: new { @class = "search-margin" }))
+    {
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+                @Html.Label("Search Product By Category")
+                <div class="input-group">
+                    @Html.TextBox("SearchTerm", null, new { @class = "form-control", id = "txtsearch" })
+                    <span class="input-group-btn">
+                        <input class="btn btn-primary" type="submit" value="Search" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    }
+    <br /><br />
+</center>
+
+<body>
+
+    <div class="grid-container">
+        @foreach (var product in Model)
+        {
+            <div class="grid-item">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        @Html.DisplayFor(ModelItem => product.Name)
+                    </div>
+                    <div class="panel-body">
+                        <img src="@Url.Content(product.Image)" alt="@product.Name" height="300" ; width="300" />
+                    </div>
+
+                    <div class=" panel-footer">
+                        <p>@Html.DisplayFor(ModelItem => product.Price) EGP</p>
+                    </div>
+                </div>
+
+            </div>
+
+        }
+
+    </div>
+</body>
