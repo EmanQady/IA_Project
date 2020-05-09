@@ -35,10 +35,6 @@ namespace Project2.Controllers
 
             return View(Products);
         }
-
-
-
-
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -51,6 +47,12 @@ namespace Project2.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+
+        }
+        public ActionResult Detail(int ID = 0)
+        {
+            Product pr = db.Product.Find(ID);
+            return View(pr);
         }
     }
 }

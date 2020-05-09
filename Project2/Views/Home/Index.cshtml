@@ -53,12 +53,13 @@
                     <div class="panel-heading">
                         @Html.DisplayFor(ModelItem => product.Name)
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body" >
                         <img src="@Url.Content(product.Image)" alt="@product.Name" height="300" ; width="300" />
                     </div>
 
                     <div class=" panel-footer">
                         <p>@Html.DisplayFor(ModelItem => product.Price) EGP</p>
+                        @Html.ActionLink("DETAILS", "Detail", "Home",new { id=product.Id} ,new { @class = "btn btn-primary" })
                     </div>
                 </div>
 
