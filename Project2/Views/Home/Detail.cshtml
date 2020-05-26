@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}  
+}
 <style>
     body {
         background-color: #fdf1ec;
@@ -25,15 +25,16 @@
         width: 327px;
         overflow: hidden;
     }
+
         .product-img img {
             transition: all 1.5s ease;
             border-radius: 7px 0 0 7px;
         }
 
-    .product-img:hover img {
-        transform: scale(1.1);
-    }
-       
+        .product-img:hover img {
+            transform: scale(1.1);
+        }
+
 
     .product-info {
         float: left;
@@ -66,7 +67,7 @@
             font-family: "Raleway", sans-serif;
             font-weight: 400;
             text-transform: uppercase;
-            color: #d2d2d2;
+            color: #808080;
             letter-spacing: 0.2em;
         }
 
@@ -88,7 +89,7 @@
         position: relative;
     }
 
-    .product-price-btn p {
+        .product-price-btn p {
             display: inline-block;
             position: absolute;
             top: -13px;
@@ -98,8 +99,8 @@
             font-size: 28px;
             font-weight: lighter;
             color: #474747;
-            margin-top:-5px;
-    }
+            margin-top: -5px;
+        }
 
     span {
         display: inline-block;
@@ -108,6 +109,7 @@
         font-size: 30px;
         margin-right: 0px;
     }
+
     .card-stats {
         grid-area: stats;
         display: grid;
@@ -118,7 +120,7 @@
         background: white;
         cursor: default;
         margin: 10px;
-        margin-left:0px;
+        margin-left: 0px;
     }
 
         .card-stats .stat button {
@@ -146,10 +148,10 @@
             cursor: pointer;
             outline: none;
         }
-       .card-stats .stat button:hover {
+
+            .card-stats .stat button:hover {
                 background-color: #79b0a1;
             }
-
 </style>
 <body>
     <div class="wrapper">
@@ -174,8 +176,15 @@
                 </div>
             </div>
         </div>
+        <br />&nbsp;<br />
+        <div>
+            <button type="button" class="btn btn-primary" style="float:right" onclick="location.href='@Url.Action("Index", "Home")'">
+                Back
+            </button>
+        </div>
     </div>
 
-</body>
+    <br />&nbsp;<br />
 
-</html>
+
+</body>

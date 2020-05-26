@@ -13,6 +13,10 @@
         padding: 10px;
     }
 
+    body {
+        background-color: #fdf1ec;
+    }
+
     .grid-item {
         background-color: rgba(255, 255, 255, 0.8);
         border: 1px solid rgb(128, 128, 128);
@@ -28,19 +32,23 @@
 
     @using (@Html.BeginForm("Index", "Home", FormMethod.Post, htmlAttributes: new { @class = "search-margin" }))
     {
-        <div class="row">
-            <div class="col-lg-4 col-lg-offset-4">
-                @Html.Label("Search Product By Category")
-                <div class="input-group">
+        @Html.Label("Search Product By Category")
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-lg-offset-4">
                     @Html.TextBox("SearchTerm", null, new { @class = "form-control", id = "txtsearch" })
-                    <span class="input-group-btn">
-                        <input class="btn btn-primary" type="submit" value="Search" />
-                    </span>
+                </div>
+                <div class="col-lg-1">
+                    <input class="btn btn-primary" type="submit" value="Search" />
+                </div>
+                <div class="col-lg-3 col-lg-offset-0">
+                    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Add","Home")'"> Add Product </button>
                 </div>
             </div>
         </div>
     }
-    <br /><br />
+
+    <br />&nbsp;<br />
 </center>
 
 <body>
@@ -53,13 +61,13 @@
                     <div class="panel-heading">
                         @Html.DisplayFor(ModelItem => product.Name)
                     </div>
-                    <div class="panel-body" >
+                    <div class="panel-body">
                         <img src="@Url.Content(product.Image)" alt="@product.Name" height="300" ; width="300" />
                     </div>
 
                     <div class=" panel-footer">
                         <p>@Html.DisplayFor(ModelItem => product.Price) EGP</p>
-                        @Html.ActionLink("DETAILS", "Detail", "Home",new { id=product.Id} ,new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Show More", "Detail", "Home", new { id = product.Id }, new { @class = "btn btn-primary" })
                     </div>
                 </div>
 

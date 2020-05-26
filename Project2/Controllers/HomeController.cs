@@ -20,6 +20,7 @@ namespace Project2.Controllers
 
             return View(ListProducts);
         }
+
         [HttpPost]
         public ActionResult Index(string SearchTerm)
         {
@@ -35,20 +36,8 @@ namespace Project2.Controllers
 
             return View(Products);
         }
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-
-        }
         public ActionResult Detail(int ID = 0)
         {
             Product pr = db.Product.Find(ID);
