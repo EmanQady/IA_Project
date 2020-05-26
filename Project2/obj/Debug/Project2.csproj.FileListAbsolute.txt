@@ -244,3 +244,4 @@ C:\Users\HP.SXO7\Source\Repos\IA_project2\Project2\obj\Debug\Project2.csproj.Cor
 C:\Users\HP.SXO7\Source\Repos\IA_project2\Project2\obj\Debug\Project2.csproj.CopyComplete
 C:\Users\HP.SXO7\Source\Repos\IA_project2\Project2\obj\Debug\Project2.dll
 C:\Users\HP.SXO7\Source\Repos\IA_project2\Project2\obj\Debug\Project2.pdb
+D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\obj\Debug\Project2.Migrations.InitialMigration1.resources

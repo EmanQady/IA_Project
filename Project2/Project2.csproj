@@ -136,7 +136,12 @@
     <Compile Include="Migrations\202004141658517_InitialMigration.designer.cs">
       <DependentUpon>202004141658517_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005262152189_InitialMigration1.cs" />
+    <Compile Include="Migrations\202005262152189_InitialMigration1.designer.cs">
+      <DependentUpon>202005262152189_InitialMigration1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -221,6 +226,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004141658517_InitialMigration.resx">
       <DependentUpon>202004141658517_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005262152189_InitialMigration1.resx">
+      <DependentUpon>202005262152189_InitialMigration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

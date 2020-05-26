@@ -12,7 +12,9 @@ namespace Project2.Context
 
         public DbSet<Category> Category { get; set; }
 
-        public DbSet<Product> Product { get; set; }  
+        public DbSet<Product> Product { get; set; }
+
+        public DbSet<Cart> Cart { get; set; }
 
     }
 }
