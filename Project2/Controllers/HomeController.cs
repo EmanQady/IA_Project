@@ -43,5 +43,7 @@ namespace Project2.Controllers
             Product pr = db.Product.Find(ID);
             return View(pr);
         }
+
     }
+
 }
