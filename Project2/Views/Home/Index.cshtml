@@ -68,6 +68,7 @@
                     <div class=" panel-footer">
                         <p>@Html.DisplayFor(ModelItem => product.Price) EGP</p>
                         @Html.ActionLink("Show More", "Detail", "Home", new { id = product.Id }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Add To Cart", "Detail", "Home", new { @class = "btn btn-primary" })
                     </div>
                 </div>
 

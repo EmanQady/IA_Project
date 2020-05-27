@@ -22,6 +22,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 </ul>
+                <div class="navbar-right">
+                    @Html.ActionLink("GO TO CART LIST", "Index", "Home", new { area = "CartList" }, new { @class = "navbar-brand"})
+                </div>
             </div>
         </div>
     </div>
