@@ -76,6 +76,26 @@ namespace Project2.Controllers
             return View(product);
         }
 
+
+        public void AddToCart(Product product)
+        {
+            var addedProduct = new Cart { ProductId = product.Id, Added_At = DateTime.Now };
+            db.Cart.Add(addedProduct);
+            db.SaveChanges();
+
+
+        }
+
+
+
+        public void RemoveFromCart(int id)
+        {
+            var cartItem = db.Cart.Find(id);
+            db.Cart.Remove(cartItem);
+            db.SaveChanges();
+
+        }
+
     }
 
 }
