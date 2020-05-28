@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using System.Net;
 
 namespace Project2.Controllers
 {
@@ -38,10 +39,41 @@ namespace Project2.Controllers
         }
 
 
+
+
         public ActionResult Detail(int ID = 0)
         {
             Product pr = db.Product.Find(ID);
             return View(pr);
+        }
+
+
+        
+        public ActionResult UpdateProduct(int id = 0)
+        {
+            Product product = db.Product.Find(id);
+            if (product == null)
+            {
+                return new HttpNotFoundResult();
+
+            }
+
+            return View(product);
+        }
+
+
+        [HttpPost]
+        public ActionResult UpdateProduct(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(product).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+
+            return View(product);
         }
 
     }

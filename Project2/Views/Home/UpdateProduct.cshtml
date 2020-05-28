@@ -1,0 +1,101 @@
+﻿@model Project2.Models.Product
+
+@{
+    ViewBag.Title = "Update Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    body {
+        background-color: #fdf1ec;
+    }
+
+    .ui {
+        background-color: #000;
+        padding: 30px;
+        border-radius: 10px;
+        opacity: 0.8;
+    }
+
+        .ui label {
+            color: #fff;
+        }
+
+        .ui h1 {
+            color: #fff;
+        }
+</style>
+
+<center>
+    <br />&nbsp;<br />
+</center>
+
+<body>
+
+    <div class="container">
+        <div class=" row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class=" ui">
+                    <h1 class=" text-center">Update Product</h1>
+                    <form class=" form-group  ">
+                        <div class="row">
+                            <div class=" col-lg-6">
+                                <label> Image </label>
+                                <input type="file" name="ImageFile" required />
+                                <br />
+                            </div>
+                            <br />
+                            <div class=" col-lg-6">
+                                <label> Name </label>
+                                <input id="Text1" type="text" class="form-control" name="userName" placeholder=" Enter Product's Name " />
+                                <br />
+                            </div>
+                            <br />
+                            <div class=" col-lg-6">
+                                <label>Price</label>
+                                <br />
+                                <input id="Text2" type="text" placeholder=" Enter Product's Price " />
+                                <br />
+                            </div>
+                            <br />
+                            <div class=" col-lg-6">
+                                <label>Description</label>
+                                <textarea id="TextArea1" rows="2" cols="20" placeholder=" Write Product's Description "></textarea>
+                                <br />
+                            </div>
+                        </div>
+                        <br />
+
+                        <label>Category</label>
+                        <select id="Select1" class="form-control">
+                            <option> Choose Product's Category</option>
+                            <option> Mobilies</option>
+                            <option> Foods</option>
+                            <option> Electronics</option>
+                            <option>Fashion</option>
+                            <option> Tablets</option>
+                        </select>
+                        <br />
+
+                        <input id="Button1" type="button" value="Update" class="btn btn-primary btn-block btn-lg" />
+                        <button type="button" class="btn btn-danger" style="float:right" onclick="location.href='@Url.Action("Detail", "Home", new { id = Model.Id })'">
+                            Cancel
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+            <div class="col-lg-3"></div>
+
+        </div>
+
+    </div>
+
+</body>
+
+
+
