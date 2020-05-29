@@ -1,5 +1,6 @@
 ﻿@model Project2.Models.Product
 
+
 @{
     ViewBag.Title = "AddProduct";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -82,19 +83,38 @@
                 <h2>Fill the Form</h2>
                 <div class="register-form">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Product Name">
+                        @Html.LabelFor(model => model.Name, "Poduct Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div>
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
                     </div>
+                    <br />
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Product Price">
+                        @Html.LabelFor(model => model.Price, "Price", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div>
+                            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
                     </div>
+                    <br />
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Product Description">
+                        @Html.LabelFor(model => model.Description, "Description", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div>
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
                     </div>
+                    <br />
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Product Category">
+                        @Html.LabelFor(model => model.Category, "Catagory", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div>
+                            @*@Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control"})*@
+                        </div>
                     </div>
+                    <br />
                     <div class="form-group">
-                        <input type="file" class="form-control" placeholder="Product Image">
+                        @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div>
+                            @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "file" } })
+                        </div>
                     </div>
 
                     <button type="button" class="btn btn-primary">Add Product</button>
