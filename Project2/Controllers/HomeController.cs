@@ -47,8 +47,30 @@ namespace Project2.Controllers
             return View(pr);
         }
 
+        public ActionResult AddProduct()
+        {
 
-        
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddProduct(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Product.Add(product);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+
+        }
+
+
+
         public ActionResult UpdateProduct(int id = 0)
         {
             Product product = db.Product.Find(id);
@@ -77,22 +99,25 @@ namespace Project2.Controllers
         }
 
 
-        public void AddToCart(Product product)
+        public ActionResult AddToCart(Product product)
         {
             var addedProduct = new Cart { ProductId = product.Id, Added_At = DateTime.Now };
             db.Cart.Add(addedProduct);
             db.SaveChanges();
 
+            return RedirectToAction("Index");
 
         }
 
 
 
-        public void RemoveFromCart(int id)
+        public ActionResult RemoveFromCart(int id)
         {
             var cartItem = db.Cart.Find(id);
             db.Cart.Remove(cartItem);
             db.SaveChanges();
+
+            return RedirectToAction("Index");
 
         }
 
