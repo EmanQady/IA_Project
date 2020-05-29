@@ -7,10 +7,11 @@
 
 <style>
     .grid-container {
-        display: grid;
+        display: inline-block;
         grid-gap: 50px;
-        grid-template-columns: auto auto auto;
-        padding: 10px;
+        column-fill: auto auto auto;
+        padding:-50px;
+        margin-left:-60px;
     }
 
     body {
@@ -20,9 +21,19 @@
     .grid-item {
         background-color: rgba(255, 255, 255, 0.8);
         border: 1px solid rgb(128, 128, 128);
-        padding: 20px;
+        padding: 0px;
         font-size: 20px;
         text-align: center;
+    }
+    h6{
+        font-size: larger;
+        color:black;
+    }
+    .buttons btn btn-primary {
+        display:inline-block;
+        width: auto;
+        margin: -5px ;
+        background-color: #fdf1ec;
     }
 </style>
 
@@ -51,30 +62,34 @@
     <br />&nbsp;<br />
 </center>
 
-<body>
-
+<body> 
     <div class="grid-container">
         @foreach (var product in Model)
         {
-            <div class="grid-item">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        @Html.DisplayFor(ModelItem => product.Name)
-                    </div>
-                    <div class="panel-body">
-                        <img src="@Url.Content(product.Image)" alt="@product.Name" height="300" ; width="300" />
-                    </div>
-
-                    <div class=" panel-footer">
-                        <p>@Html.DisplayFor(ModelItem => product.Price) EGP</p>
-                        @Html.ActionLink("Show More", "Detail", "Home", new { id = product.Id }, new { @class = "btn btn-primary" })
-                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("AddToCart","Home", new { id = product.Id })'"> Add To Cart </button>
+        <div class="col-xs-6 col-sm-4 col-lg-2">
+            <div class="container-fluid mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-auto mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="panel-body">
+                                    <img src="@Url.Content(product.Image)" alt="@product.Name" height="250" ; width="180" />
+                                </div>
+                                <h5 class="card-title text-center">@Html.DisplayFor(ModelItem => product.Price) EGP</h5>
+                                <h6 class="card-subtitle mb-2 ">@Html.DisplayFor(ModelItem => product.Name)</h6>
+                                <div class="form-inline">
+                                    <div>
+                                        @Html.ActionLink("Show More", "Detail", "Home", new { id = product.Id }, new { @class = "btn btn-primary" })
+                                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("AddToCart","Home", new { id = product.Id })'"> Add To Cart </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
-
-        }
-
-    </div>
+        </div>
+                }
+            </div>
+        
 </body>
