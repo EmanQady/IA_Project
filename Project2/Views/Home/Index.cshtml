@@ -11,11 +11,16 @@
         grid-gap: 50px;
         column-fill: auto auto auto;
         padding:-50px;
-        margin-left:-60px;
+        margin-left:-20px;
+        margin-right:-60px;
     }
 
-    body {
+    .body {
         background-color: #fdf1ec;
+      
+    }
+    .text-body {
+        padding-bottom: 20px;
     }
 
     .grid-item {
@@ -29,11 +34,33 @@
         font-size: larger;
         color:black;
     }
-    .buttons btn btn-primary {
-        display:inline-block;
-        width: auto;
-        margin: -5px ;
-        background-color: #fdf1ec;
+    .panel-body {
+      
+        overflow: hidden;
+    }
+        .panel-body img {
+            margin-left: -30px;
+            transition: all 1.5s ease;
+            border-radius: 7px 0 0 7px;
+        }
+        .panel-body:hover img {
+            transform: scale(1.1);
+        }
+    .button2{
+        padding-top:0px;
+    }
+    .button2 button {
+        margin-left: 99px;
+        margin-right: 55px;
+        margin-top: -57px;
+    }
+    .btn {
+        padding: 5px;
+    }
+
+    .card {
+        padding: 0px;
+        height: 510px;
     }
 </style>
 
@@ -72,17 +99,20 @@
                     <div class="col-auto mb-2">
                         <div class="card">
                             <div class="card-body">
-                                <div class="panel-body">
-                                    <img src="@Url.Content(product.Image)" alt="@product.Name" height="250" ; width="180" />
+                                <div class="text-body">
+                                    <div class="panel-body">
+                                        <img src="@Url.Content(product.Image)" alt="@product.Name" height="250" ; width="200" />
+                                    </div>
+                                    <h5 class="card-title text-center">@Html.DisplayFor(ModelItem => product.Price) EGP</h5>
+                                    <h6 class="card-subtitle mb-2 ">@Html.DisplayFor(ModelItem => product.Name)</h6>
                                 </div>
-                                <h5 class="card-title text-center">@Html.DisplayFor(ModelItem => product.Price) EGP</h5>
-                                <h6 class="card-subtitle mb-2 ">@Html.DisplayFor(ModelItem => product.Name)</h6>
-                                <div class="form-inline">
+                                <div class="button2">
                                     <div>
-                                        @Html.ActionLink("Show More", "Detail", "Home", new { id = product.Id }, new { @class = "btn btn-primary" })
+                                        @Html.ActionLink("Show More", "Detail", "Home", new { id = product.Id }, new {@class = "btn btn-primary"})
                                         <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("AddToCart","Home", new { id = product.Id })'"> Add To Cart </button>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
