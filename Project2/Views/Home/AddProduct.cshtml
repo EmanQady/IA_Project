@@ -1,39 +1,18 @@
 ﻿@model Project2.Models.Product
-
+@using Project2.Context;
 
 @{
     ViewBag.Title = "AddProduct";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    MyDbContext db = new MyDbContext();
+    ViewBag.categories = db.Category.ToList();
 }
 
 <style>
     body {
         background-color: #fdf1ec;
     }
-
-    .register-left {
-        text-align: center;
-        color: #fff;
-        padding: 30px;
-    }
-
-    .register-left {
-        padding: 20px 20px 0;
-    }
-
-        .register-left .btn-primary {
-            border-radius: 1.5rem;
-            border: none;
-            background: #f8f8f8;
-            font-weight: 600;
-            color: #555;
-            margin-top: 20px;
-            padding: 10px
-        }
-
-            .register-left .btn-primary:hover {
-                background: #000;
-            }
 
     .register-right {
         border: none;
@@ -83,41 +62,47 @@
                 <h2>Fill the Form</h2>
                 <div class="register-form">
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Name, "Poduct Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.Name, "Poduct Name:", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div>
                             @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                         </div>
                     </div>
                     <br />
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Price, "Price", htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.Price, "Price:", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div>
                             @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
                         </div>
                     </div>
                     <br />
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Description, "Description", htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.Description, "Description:", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div>
                             @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
                         </div>
                     </div>
                     <br />
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Category, "Catagory", htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.Category, "Catagory:", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div>
-                            @*@Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control"})*@
+                            <select name="category">
+                                <option> Choose Category</option>
+                                @foreach (var category in ViewBag.categories)
+                                {
+                                    <option>@category.Name</option>
+                                }
+                            </select>
                         </div>
                     </div>
                     <br />
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.Image, "Image:", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div>
-                            @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "file" } })
+                            @Html.TextBoxFor(model => model.Image, new { type = "file" })
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-primary">Add Product</button>
+                    <button type="submit" class="btn btn-primary">Add Product</button>
                 </div>
             </div>
         </div>
