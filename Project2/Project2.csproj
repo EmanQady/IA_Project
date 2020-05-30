@@ -152,26 +152,26 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\Electronics\NikonCamera_D3500_DSLR.jpg" />
-    <Content Include="Content\Images\Electronics\SmartTV_Android2.jpg" />
-    <Content Include="Content\Images\Health_Makeup\Eyeshadow Palette - 415.jpg" />
-    <Content Include="Content\Images\Health_Makeup\Luna Tri Care_NonAlcoholic_Mouthwash.jpg" />
-    <Content Include="Content\Images\Health_Makeup\L_Oreal Paris_Mascara.jpg" />
-    <Content Include="Content\Images\Health_Makeup\Matt Lip Gloss - Ice rose.jpg" />
-    <Content Include="Content\Images\Health_Makeup\Nivea_Natural_Fairness.jpg" />
-    <Content Include="Content\Images\Health_Makeup\Paradontax Whitening Toothpaste.jpg" />
-    <Content Include="Content\Images\Home_Office\beanbags.jpg" />
-    <Content Include="Content\Images\Home_Office\laserjet_printer.jpg" />
-    <Content Include="Content\Images\Home_Office\rango_bed_sofa.jpg" />
-    <Content Include="Content\Images\Home_Office\wooden_rocking_chair.jpg" />
-    <Content Include="Content\Images\Kids Fashion\Blouse_Pink_Offscholder.jpg" />
-    <Content Include="Content\Images\Kids Fashion\Crochet_dress.jpg" />
-    <Content Include="Content\Images\Kids Fashion\embroidered_sleeveless_dress.jpg" />
-    <Content Include="Content\Images\Kids Fashion\O-neck_Clothing_Shorts_Suit_2Pcs.jpg" />
-    <Content Include="Content\Images\Men%27s Fashion\Andora_Gabardine_PocketLinenPants _Black.jpg" />
-    <Content Include="Content\Images\Men%27s Fashion\BigSize_Jacket_Spring_Casual.jpg" />
-    <Content Include="Content\Images\Men%27s Fashion\DenimCotton_JacketCasual_JacketLoose.jpg" />
-    <Content Include="Content\Images\Men%27s Fashion\Reserved_Cuffed_Sweatpants_Grey.jpg" />
+    <Content Include="Content\Images\Andora_Gabardine_PocketLinenPants _Black.jpg" />
+    <Content Include="Content\Images\beanbags.jpg" />
+    <Content Include="Content\Images\BigSize_Jacket_Spring_Casual.jpg" />
+    <Content Include="Content\Images\Blouse_Pink_Offscholder.jpg" />
+    <Content Include="Content\Images\Crochet_dress.jpg" />
+    <Content Include="Content\Images\DenimCotton_JacketCasual_JacketLoose.jpg" />
+    <Content Include="Content\Images\embroidered_sleeveless_dress.jpg" />
+    <Content Include="Content\Images\Eyeshadow Palette - 415.jpg" />
+    <Content Include="Content\Images\laserjet_printer.jpg" />
+    <Content Include="Content\Images\Luna Tri Care_NonAlcoholic_Mouthwash.jpg" />
+    <Content Include="Content\Images\L_Oreal Paris_Mascara.jpg" />
+    <Content Include="Content\Images\Matt Lip Gloss - Ice rose.jpg" />
+    <Content Include="Content\Images\NikonCamera_D3500_DSLR.jpg" />
+    <Content Include="Content\Images\Nivea_Natural_Fairness.jpg" />
+    <Content Include="Content\Images\O-neck_Clothing_Shorts_Suit_2Pcs.jpg" />
+    <Content Include="Content\Images\Paradontax Whitening Toothpaste.jpg" />
+    <Content Include="Content\Images\rango_bed_sofa.jpg" />
+    <Content Include="Content\Images\Reserved_Cuffed_Sweatpants_Grey.jpg" />
+    <Content Include="Content\Images\SmartTV_Android2.jpg" />
+    <Content Include="Content\Images\wooden_rocking_chair.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -209,8 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\Food\" />
-    <Folder Include="Content\Images\Women Fashion\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

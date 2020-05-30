@@ -60,8 +60,7 @@ namespace Project2.Controllers
         {
             if (ModelState.IsValid)
             {
-                var addedProduct = new Product {Id = product.Id, Name = product.Name, Category = product.Category, Description = product.Description, Price = product.Price, Image = product.Image};
-                db.Product.Add(addedProduct);
+                db.Product.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
