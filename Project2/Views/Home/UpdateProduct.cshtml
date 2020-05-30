@@ -1,101 +1,101 @@
 ﻿@model Project2.Models.Product
+@using Project2.Context;
 
 @{
     ViewBag.Title = "Update Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    MyDbContext db = new MyDbContext();
+    ViewBag.categories = db.Category.ToList();
 }
 
-<style>
 
+<style>
     body {
         background-color: #fdf1ec;
     }
 
-    .ui {
-        background-color: #000;
-        padding: 30px;
-        border-radius: 10px;
-        opacity: 0.8;
+    .register-right {
+        border: none;
+        background: #ccafa3;
+        border-top-left-radius: 10% 50%;
+        border-bottom-left-radius: 10% 50%;
+        padding: 50px;
     }
 
-        .ui label {
-            color: #fff;
+        .register-right h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #555/
         }
 
-        .ui h1 {
-            color: #fff;
-        }
+    .register-form {
+        padding: 20px;
+    }
 </style>
 
 <center>
-    <br />&nbsp;<br />
+    <h2>Update Product <br /><br /> "@Model.Name"</h2>
 </center>
 
+<br />&nbsp;<br />
+
 <body>
-
     <div class="container">
-        <div class=" row">
-            <div class="col-lg-3"></div>
-            <div class="col-lg-6">
-                <div class=" ui">
-                    <h1 class=" text-center">Update Product</h1>
-                    <form class=" form-group  ">
-                        <div class="row">
-                            <div class=" col-lg-6">
-                                <label> Image </label>
-                                <input type="file" name="ImageFile" required />
-                                <br />
-                            </div>
-                            <br />
-                            <div class=" col-lg-6">
-                                <label> Name </label>
-                                <input id="Text1" type="text" class="form-control" name="userName" placeholder=" Enter Product Name " />
-                                <br />
-                            </div>
-                            <br />
-                            <div class=" col-lg-6">
-                                <label>Price</label>
-                                <br />
-                                <input id="Text2" type="text" placeholder=" Enter Product Price " />
-                                <br />
-                            </div>
-                            <br />
-                            <div class=" col-lg-6">
-                                <label>Description</label>
-                                <textarea id="TextArea1" rows="2" cols="20" placeholder=" Write Product Description "></textarea>
-                                <br />
-                            </div>
-                        </div>
-                        <br />
-
-                        <label>Category</label>
-                        <select id="Select1" class="form-control">
-                            <option> Choose Product's Category</option>
-                            <option>Electronics</option>
-                            <option>Kids Fashion</option>
-                            <option>Women Fashion</option>
-                            <option>Men's Fashion</option>
-                            <option>Health & Makeup</option>
-                            <option>Home & Office</option>
-                        </select>
-                        <br />
-
-                        <input id="Button1" type="button" value="Update" class="btn btn-primary btn-block btn-lg" />
-                        <button type="button" class="btn btn-danger" style="float:right" onclick="location.href='@Url.Action("Detail", "Home", new { id = Model.Id })'">
-                            Cancel
-                        </button>
-
-                    </form>
-
-                </div>
-
+        <div class="register-right">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+            <div style="float:right">
+                <img src="@Url.Content(Model.Image)" alt="@Model.Name" height="250" ; width="250" />
             </div>
-            <div class="col-lg-3"></div>
-
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, "Poduct Name:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Price, "Price:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, "Description:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @rows = 10 })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Category, "Catagory:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    <select name="category">
+                        <option> Choose Category</option>
+                        @foreach (var category in ViewBag.categories)
+                        {
+                            <option>@category.Name</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Image, "Image:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.TextBoxFor(model => model.Image, new { type = "file" })
+                </div>
+            </div>
+            <div class="form-group" style="float:right">
+                <button type="submit" class="btn btn-success">Update Product</button>
+                <button type="button" class="btn btn-danger" style="float:right" onclick="location.href='@Url.Action("Detail", "Home", new { id = Model.Id })'">
+                    Cancel
+                </button>
+            </div>
         </div>
-
     </div>
-
 </body>
 
 

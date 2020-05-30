@@ -2,7 +2,7 @@
 @using Project2.Context;
 
 @{
-    ViewBag.Title = "AddProduct";
+    ViewBag.Title = "Add Product";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     MyDbContext db = new MyDbContext();
@@ -16,7 +16,7 @@
 
     .register-right {
         border: none;
-        background: #d0fdf3;
+        background: #ccafa3;
         border-top-left-radius: 10% 50%;
         border-bottom-left-radius: 10% 50%;
         padding: 50px;
@@ -31,21 +31,6 @@
     .register-form {
         padding: 20px;
     }
-
-    .register-right .btn-primary {
-        float: right;
-        border-radius: 1.5rem;
-        border: none;
-        background: #f89800;
-        font-weight: 600;
-        color: #fff;
-        margin-top: 20px;
-        padding: 10px
-    }
-
-        .register-right .btn-primary:hover {
-            background: #ff5722
-        }
 </style>
 
 
@@ -57,53 +42,52 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-7 register-right">
-                <h2>Fill the Form</h2>
-                <div class="register-form">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Name, "Poduct Name:", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div>
-                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Price, "Price:", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div>
-                            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Description, "Description:", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div>
-                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                        </div>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Category, "Catagory:", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div>
-                            <select name="category">
-                                <option> Choose Category</option>
-                                @foreach (var category in ViewBag.categories)
-                                {
-                                    <option>@category.Name</option>
-                                }
-                            </select>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Image, "Image:", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div>
-                            @Html.TextBoxFor(model => model.Image, new { type = "file" })
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Add Product</button>
+        <div class="register-right">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, "Poduct Name:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                 </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Price, "Price:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, "Description:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @rows = 10 })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Category, "Catagory:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    <select name="category">
+                        <option> Choose Category</option>
+                        @foreach (var category in ViewBag.categories)
+                        {
+                            <option>@category.Name</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Image, "Image:", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div>
+                    @Html.TextBoxFor(model => model.Image, new { type = "file" })
+                </div>
+            </div>
+            <div class="form-group" style="float:right">
+                <button type="submit" class="btn btn-success">Add Product</button>
+                <button type="button" class="btn btn-danger" style="float:right" onclick="location.href='@Url.Action("Index", "Home")'">
+                    Cancel
+                </button>
             </div>
         </div>
     </div>

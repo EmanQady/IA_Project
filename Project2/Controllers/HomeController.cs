@@ -40,13 +40,15 @@ namespace Project2.Controllers
 
 
 
-
+        //Show product details
         public ActionResult Detail(int ID = 0)
         {
             Product pr = db.Product.Find(ID);
             return View(pr);
         }
 
+
+        //Adding product
         public ActionResult AddProduct()
         {
 
@@ -58,7 +60,8 @@ namespace Project2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Product.Add(product);
+                var addedProduct = new Product {Id = product.Id, Name = product.Name, Category = product.Category, Description = product.Description, Price = product.Price, Image = product.Image};
+                db.Product.Add(addedProduct);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -70,7 +73,19 @@ namespace Project2.Controllers
         }
 
 
+        //Removing Product
+        public ActionResult DeleteProduct(int id)
+        {
+            var product = db.Product.Find(id);
+            db.Product.Remove(product);
+            db.SaveChanges();
 
+            return RedirectToAction("Index");
+        }
+
+
+
+        //Updating Product
         public ActionResult UpdateProduct(int id = 0)
         {
             Product product = db.Product.Find(id);
@@ -89,7 +104,8 @@ namespace Project2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
+                var updatedProduct = new Product {Name = product.Name, Category = product.Category, Description = product.Description, Price = product.Price, Image = product.Image };
+                db.Entry(updatedProduct).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
 
@@ -99,6 +115,9 @@ namespace Project2.Controllers
         }
 
 
+
+
+        //Cart Functions
         public ActionResult AddToCart(Product product)
         {
             var addedProduct = new Cart { ProductId = product.Id, Added_At = DateTime.Now };
@@ -108,8 +127,6 @@ namespace Project2.Controllers
             return RedirectToAction("Index");
 
         }
-
-
 
         public ActionResult RemoveFromCart(int id)
         {

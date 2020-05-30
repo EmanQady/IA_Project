@@ -4,13 +4,14 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <style>
     body {
         background-color: #fdf1ec;
     }
 
     .wrapper {
-        height: 420px;
+        height: 520px;
         width: 654px;
         margin: 50px auto;
         border-radius: 10px 10px 50px 10px;
@@ -21,9 +22,10 @@
 
     .product-img {
         float: left;
-        height: 420px;
+        height: 520px;
         width: 327px;
         overflow: hidden;
+        background-color: #ffffff
     }
 
         .product-img img {
@@ -38,14 +40,14 @@
 
     .product-info {
         float: left;
-        height: 420px;
+        height: 520px;
         width: 327px;
         border-radius: 0 7px 10px 7px;
         background-color: #ffffff;
     }
 
     .product-text {
-        height: 300px;
+        height: 400px;
         width: 327px;
     }
 
@@ -170,19 +172,20 @@
             <div class="panel-footer">
                 <div>
                     @Html.ActionLink("Update", "UpdateProduct", "Home", new { id = Model.Id }, new { @class = "btn btn-warning" })
-                    @Html.ActionLink("Delete", "Detail", "Home", new { id = Model.Id }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Delete", "DeleteProduct", "Home", new { id = Model.Id }, new { @class = "btn btn-danger" })
 
                 </div>
+            </div>
+            <br />&nbsp;<br />
         </div>
-        <br />&nbsp;<br />
         <div>
             <button type="button" class="btn btn-primary" style="float:right" onclick="location.href='@Url.Action("Index", "Home")'">
                 Back
             </button>
         </div>
-    </div>
 
-    <br />&nbsp;<br />
+        <br />&nbsp;<br />
+    </div>
 
 
 </body>
