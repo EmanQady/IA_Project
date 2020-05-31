@@ -18,6 +18,7 @@ namespace Project2.Controllers
         {
             ViewBag.Category = new SelectList(db.Category, "Id", "Name");
             List<Product> ListProducts = db.Product.ToList();
+            ViewBag.error = TempData["error"];
 
             return View(ListProducts);
         }
@@ -51,7 +52,7 @@ namespace Project2.Controllers
                 searchResults = db.Product.Include(c => c.Category).Where(a => a.CategoryId == id).ToList();
             }
 
-            return View(searchResults);
+            return View("Index", searchResults);
         }
 
 
@@ -140,8 +141,16 @@ namespace Project2.Controllers
         public ActionResult AddToCart(Product product)
         {
             var addedProduct = new Cart { ProductId = product.Id, Added_At = DateTime.Now };
-            db.Cart.Add(addedProduct);
-            db.SaveChanges();
+            if (db.Cart.Find(product.Id) != null)
+            {
+                TempData["error"] = "Product already added";
+            }
+            else
+            {
+                db.Cart.Add(addedProduct);
+                db.SaveChanges();
+            }
+
 
             return RedirectToAction("Index");
 

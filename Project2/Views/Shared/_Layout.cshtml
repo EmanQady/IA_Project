@@ -4,6 +4,7 @@
 
     ViewBag.cart = db.Cart.ToList();
     ViewBag.product = db.Product.ToList();
+    //TimeSpan timeAdded = new TimeSpan();
 
 }
 
@@ -17,6 +18,10 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    @if (ViewBag.error != null)
+    {
+        <script>alert("product is already added");</script>
+    }
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -63,7 +68,7 @@
                                         </td>
                                         <td class="table-bordered" style="padding:10px">
                                             <p style="font-weight:bold">@item.Name — @item.Price EGP </p>
-                                            <p style="font-style:oblique">Added to cart @DateTime.Now.Subtract(product.Added_At).Hours hours ago at @product.Added_At.ToString("hh:mm tt - dd/MM/yyyy") .</p>
+                                            <p style="font-style:oblique">Added to cart @DateTime.Now.Subtract(product.Added_At).Hours hours ago.</p>
                                         </td>
 
                                     </tr>
