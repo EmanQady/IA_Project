@@ -74,7 +74,7 @@ namespace Project2.Controllers
         //Removing Product
         public ActionResult DeleteProduct(int id)
         {
-            var product = db.Product.Find(id);
+            var product = db.Product.FirstOrDefault(p => p.Id == id);
             db.Product.Remove(product);
             db.SaveChanges();
 
@@ -84,7 +84,7 @@ namespace Project2.Controllers
 
 
         //Updating Product
-        public ActionResult UpdateProduct(int id = 0)
+        public ActionResult UpdateProduct(int id)
         {
             Product product = db.Product.Find(id);
             if (product == null)
@@ -98,18 +98,24 @@ namespace Project2.Controllers
 
 
         [HttpPost]
-        public ActionResult UpdateProduct(Product product)
+        public ActionResult UpdateProduct(Product product, HttpPostedFileBase image)
         {
-            if (ModelState.IsValid)
+            Product updatedProduct = db.Product.FirstOrDefault(p=> p.Id == product.Id);
+            updatedProduct.Name = product.Name;
+            updatedProduct.Price = product.Price;
+            updatedProduct.Description = product.Description;
+            updatedProduct.CategoryId = product.CategoryId;
+            String photoName = "";
+            if (image != null)
             {
-                var updatedProduct = new Product { Name = product.Name, Category = product.Category, Description = product.Description, Price = product.Price, Image = product.Image };
-                db.Entry(updatedProduct).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-
+                photoName = System.Guid.NewGuid().ToString() + System.IO.Path.GetExtension(image.FileName);
+                string photoPath = Server.MapPath("~/Content/Images/" + photoName);
+                image.SaveAs(photoPath);
+                updatedProduct.Image = photoName;
             }
 
-            return View(product);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
 
