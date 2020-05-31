@@ -51,6 +51,7 @@
                     @Html.LabelFor(model => model.Name, "Poduct Name:", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div>
                         @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <br />
@@ -58,6 +59,7 @@
                     @Html.LabelFor(model => model.Price, "Price:", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div>
                         @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <br />
@@ -65,6 +67,7 @@
                     @Html.LabelFor(model => model.Description, "Description:", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div>
                         @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @rows = 10 })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <br />
@@ -85,6 +88,7 @@
                     @Html.LabelFor(model => model.Image, "Image:", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div>
                         @Html.TextBoxFor(model => model.Image, new { type = "file" })
+                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group" style="float:right">
