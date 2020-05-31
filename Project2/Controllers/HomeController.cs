@@ -22,22 +22,37 @@ namespace Project2.Controllers
             return View(ListProducts);
         }
 
-        [HttpPost]
-        public ActionResult Index(string SearchTerm)
+        //[HttpPost]
+        //public ActionResult Index(string SearchTerm)
+        //{
+        //    List<Product> Products;
+        //    if (string.IsNullOrEmpty(SearchTerm))
+        //    {
+        //        Products = db.Product.ToList();
+        //    }
+        //    else
+        //    {
+        //        Products = db.Product.Include(c => c.Category).Where(a => a.Category.Name.ToLower().StartsWith(SearchTerm.ToLower())).ToList();
+        //    }
+
+        //    return View(Products);
+        //}
+
+        [HttpGet]
+        public ActionResult Search(int id)
         {
-            List<Product> Products;
-            if (string.IsNullOrEmpty(SearchTerm))
+            List<Product> searchResults;
+            if (id == 0)
             {
-                Products = db.Product.ToList();
+                searchResults = db.Product.ToList();
             }
             else
             {
-                Products = db.Product.Include(c => c.Category).Where(a => a.Category.Name.ToLower().StartsWith(SearchTerm.ToLower())).ToList();
+                searchResults = db.Product.Include(c => c.Category).Where(a => a.CategoryId == id).ToList();
             }
 
-            return View(Products);
+            return View(searchResults);
         }
-
 
 
         //Show product details
@@ -100,7 +115,7 @@ namespace Project2.Controllers
         [HttpPost]
         public ActionResult UpdateProduct(Product product, HttpPostedFileBase image)
         {
-            Product updatedProduct = db.Product.FirstOrDefault(p=> p.Id == product.Id);
+            Product updatedProduct = db.Product.FirstOrDefault(p => p.Id == product.Id);
             updatedProduct.Name = product.Name;
             updatedProduct.Price = product.Price;
             updatedProduct.Description = product.Description;

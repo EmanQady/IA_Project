@@ -72,7 +72,7 @@
                     @Html.LabelFor(model => model.Category, "Catagory:", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div>
                         <select name="CategoryId">
-                            <option> Choose Category</option>
+                            <option selected disabled> Choose Category</option>
                             @foreach (var category in ViewBag.categories)
                             {
                                 <option value="@category.CategoryId">@category.Name</option>

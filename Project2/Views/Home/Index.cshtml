@@ -1,8 +1,11 @@
 ﻿@model List<Project2.Models.Product>
+@using Project2.Context;
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    MyDbContext db = new MyDbContext();
+    ViewBag.categories = db.Category.ToList();
 }
 
 <style>
@@ -61,25 +64,30 @@
 
 <center>
     <h1>Online Market</h1>
-    <br /><br />
+    <br />&nbsp;<br />
 
-    @using (@Html.BeginForm("Index", "Home", FormMethod.Post, htmlAttributes: new { @class = "search-margin" }))
-    {
-        @Html.Label("Search Product By Category")
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-lg-offset-4">
-                    @Html.TextBox("SearchTerm", null, new { @class = "form-control", id = "txtsearch" })
-                </div>
-                <div class="col-lg-1">
-                    <input class="btn btn-primary" type="submit" value="Search" />
-                </div>
-                <div class="col-lg-3 col-lg-offset-0">
-                    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("AddProduct", "Home")'"> Add Product </button>
-                </div>
+
+    <div class="container">
+        <div class="row">
+            @Html.Label("Search Product By Category")
+
+            <form class="form-inline">
+                <select name="CategoryId" class="form-control">
+                    <option selected disabled>Select Category</option>
+                    @foreach (var category in ViewBag.categories)
+                    {
+                        <option value="@category.CategoryId" onclick="location.href='@Url.Action("Search", "Home")'"> @category.Name</option>
+                    }
+                </select>
+
+            </form>
+            <br /><br />
+            <div>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("AddProduct", "Home")'"> Add Product </button>
             </div>
         </div>
-    }
+    </div>
+
 
     <br />&nbsp;<br />
 </center>
