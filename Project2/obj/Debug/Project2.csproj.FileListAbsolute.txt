@@ -69,7 +69,6 @@ D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\bin\System.Web.WebPages
 D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\bin\Newtonsoft.Json.xml
 D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\bin\Antlr3.Runtime.pdb
 D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\obj\Debug\Project2.csprojAssemblyReference.cache
 D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\obj\Debug\Project2.csproj.CoreCompileInputs.cache
 D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\obj\Debug\Project2.csproj.CopyComplete
 D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\obj\Debug\Project2.dll
@@ -328,3 +327,5 @@ C:\Users\LENOVO.SXM4\source\repos\IA_project3\Project2\obj\Debug\Project2.csproj
 C:\Users\LENOVO.SXM4\source\repos\IA_project3\Project2\obj\Debug\Project2.csproj.CopyComplete
 C:\Users\LENOVO.SXM4\source\repos\IA_project3\Project2\obj\Debug\Project2.dll
 C:\Users\LENOVO.SXM4\source\repos\IA_project3\Project2\obj\Debug\Project2.pdb
+D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\obj\Debug\Project2.Migrations.ProductMigration.resources
+D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\obj\Debug\Project2.Migrations.ProductMigration1.resources

@@ -22,11 +22,10 @@ namespace Project2.Models
 
 
         [Column("price")]
-        public float Price { get; set; }
+        public double Price { get; set; }
 
 
         [Column("image")]
-        [StringLength(100)]
         [DataType(DataType.ImageUrl)]
         public string Image { get; set; }
 

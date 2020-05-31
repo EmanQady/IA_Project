@@ -56,19 +56,18 @@ namespace Project2.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddProduct(Product product)
+        public ActionResult AddProduct(Product product, HttpPostedFileBase image)
         {
-            if (ModelState.IsValid)
-            {
-                db.Product.Add(product);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return RedirectToAction("Index");
-            }
+            String photoName = "";
+            photoName = System.Guid.NewGuid().ToString() + System.IO.Path.GetExtension(image.FileName);
+            string photoPath = Server.MapPath("~/Content/Images/" + photoName);
+            image.SaveAs(photoPath);
+            product.Image = photoName;
 
+
+            db.Product.Add(product);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
 
@@ -103,7 +102,7 @@ namespace Project2.Controllers
         {
             if (ModelState.IsValid)
             {
-                var updatedProduct = new Product {Name = product.Name, Category = product.Category, Description = product.Description, Price = product.Price, Image = product.Image };
+                var updatedProduct = new Product { Name = product.Name, Category = product.Category, Description = product.Description, Price = product.Price, Image = product.Image };
                 db.Entry(updatedProduct).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

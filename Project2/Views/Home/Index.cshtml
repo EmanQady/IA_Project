@@ -95,7 +95,7 @@
                             <div class="grid-item">
                                 <div class="card">
                                     <div class="panel-body">
-                                        <img src="@Url.Content(product.Image)" alt="@product.Name" height="250" ; width="200" />
+                                        <img src="@Url.Content("~/Content/Images/" + product.Image)" alt="@product.Name" height="250" ; width="200" />
                                     </div>
                                     <h5 class="card-title text-center">@Html.DisplayFor(ModelItem => product.Price) EGP</h5>
                                     <h6 class="card-subtitle mb-2 ">@Html.DisplayFor(ModelItem => product.Name)</h6>
