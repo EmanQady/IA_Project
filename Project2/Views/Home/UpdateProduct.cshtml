@@ -85,7 +85,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Category, "Catagory:", htmlAttributes: new { @class = "control-label col-md-2" })
                     <div>
-                        <select name="CategoryId">
+                        <select name="CategoryId" style=" color:black">
                             <option selected disabled> Choose Category</option>
                             @foreach (var category in ViewBag.categories)
                             {

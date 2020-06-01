@@ -33,7 +33,7 @@
         height:100px;
         
     }
-    nav {
+    .nav {
         position: relative;
         width: calc(100% - 60px);
         margin: 0 auto;
@@ -42,7 +42,7 @@
         z-index: 1;
         text-align: right;
         padding-right: 3%;
-        height:50px;
+        height: 50px;
     }
     .logo {
         width: 15%;
@@ -67,10 +67,14 @@
         line-height: 30px;
         position: relative;
         z-index: 1;
+        border:7px 7px 7px 7px;
+        
     }
         .menu-area a:hover {
             background: #fdf1ec;
-            color:black;
+            color: black;
+            border: 7px 7px 7px 7px;
+            height:50px;
         }
 
             .menu-area a:hover:after {
@@ -97,6 +101,19 @@
         top: 100%;
         right: 0;
     }
+    .modal-footer button {
+        background-color: #d9534f;
+        border-color: black;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fdf1ec
+    }
+
+        .modal-footer button:hover {
+            background: #fdf1ec;
+            color: black;
+            border-color: black;
+        }
 
 </style>
 <!DOCTYPE html>
@@ -114,28 +131,28 @@
         <script>alert("product is already added");</script>
     }
     <div class="custom-padding">
-        <nav class="navbar navbar-expand-md" style="margin-top:-115px;">
+        <nav class="nav" style="margin-top:-115px;">
             <div class="logo">logo</div>
             <ul class="menu-area">
                 <li><a href="#">@Html.ActionLink("EMarket", "Index", "Home", new { area = "" })</a></li>
                 <li><a href="#">@Html.ActionLink("Shop", "Index", "Home", new { area = "" })</a></li>
                 <li><a data-toggle="modal" data-target="#cartModal" style="cursor:pointer"> GO TO CART LIST </a></li>
                 <li><a href="#">@Html.ActionLink("Add New Product", "AddProduct", "Home", new { area = "" })</</a></li>
-                <li><a href="#">@Html.ActionLink("Contact", "Index", "Home", new { area = "" })</a></li>
+                
             </ul>
         </nav>
     </div>
      @*Modal hna da goz2 el cart*@ 
     <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">CART LIST</h5>
+            <div class="modal-content" style="background-color:black ; opacity:0.9;" >
+                <div class="modal-header" style="background-color: black;opacity: 0.8; left:50% ;margin-bottom:-20px;">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: #fdf1ec;font-family:'Lucida Handwriting';font-size:30px; margin-left:190px ;padding-bottom:-75px;padding-top:25px">CART LIST</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        @*<span aria-hidden="true">&times;</span>*@
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="color: #fdf1ec">
                     <table class="table-hover ">
                         @foreach (var product in ViewBag.cart)
                         {
@@ -161,8 +178,8 @@
                     </table>
 
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <div class="modal-footer" style="padding-top:-35px">
+                    <button type="button" class="btn btn-block" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

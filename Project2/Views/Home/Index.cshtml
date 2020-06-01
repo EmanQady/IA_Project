@@ -112,12 +112,12 @@
     }
     form{
         position:absolute;
-        left:40%;
+        left:36%;
         display: inline-block;
     }
         form .btn {
             margin-top: -40px;
-            margin-left: 280px;
+            margin-left: 270px;
             background-color: #fdf1ec;
         }
 
@@ -131,8 +131,8 @@
             <h2 style="font-family: 'Gill Sans Nova ';font-size:18px; margin-top:-5px;">Search Product By Category</h2>
         </div>
         <form method="get" action="/Home/Search" class="form">
-            <select name="id" class="form-control">
-                <option selected disabled>Select Category</option>
+            <select name="id" class="form-control" style="border-bottom-color: black;border-color: #fdf1ec">
+                <option selected disabled >Select Category</option>
                 @foreach (var category in ViewBag.categories)
                 {
                     <option value="@category.CategoryId"> @category.Name</option>
@@ -166,8 +166,8 @@
                                         <h6 class="card-subtitle mb-2 ">@Html.DisplayFor(ModelItem => product.Name)</h6>
                                     </div>
                                     <div class="button2">
-                                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Detail","Home", new { id = product.Id })'">Show More</button>
-                                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("AddToCart","Home", new { id = product.Id })'">Add To Cart</button>
+                                        <button type="button" class="btn" onclick="location.href='@Url.Action("Detail","Home", new { id = product.Id })'">Show More</button>
+                                        <button type="button" class="btn" onclick="location.href='@Url.Action("AddToCart","Home", new { id = product.Id })'">Add To Cart</button>
                                     </div>
                                 </div>
                             </div>
