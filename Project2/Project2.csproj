@@ -160,6 +160,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\57-512.png" />
     <Content Include="Content\Images\Andora_Gabardine_PocketLinenPants _Black.jpg" />
     <Content Include="Content\Images\beanbags.jpg" />
     <Content Include="Content\Images\BigSize_Jacket_Spring_Casual.jpg" />
@@ -180,6 +181,7 @@
     <Content Include="Content\Images\Reserved_Cuffed_Sweatpants_Grey.jpg" />
     <Content Include="Content\Images\SmartTV_Android2.jpg" />
     <Content Include="Content\Images\wooden_rocking_chair.jpg" />
+    <Content Include="Content\Images\tanalee-youngblood-Ub7V0V3azzw-unsplash.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

@@ -156,7 +156,7 @@
             }
 </style>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" style="margin-top:-2px;">
         <div class="product-img">
             <img src="@Url.Content("~/Content/Images/" +Model.Image)" alt="@Model.Image" height="420" ; width="327" />
         </div>
@@ -173,15 +173,14 @@
                 <div>
                     @Html.ActionLink("Update", "UpdateProduct", "Home", new { id = Model.Id }, new { @class = "btn btn-warning" })
                     @Html.ActionLink("Delete", "DeleteProduct", "Home", new { id = Model.Id }, new { @class = "btn btn-danger" })
+                    <button type="button" class="btn btn-primary" style="" onclick="location.href='@Url.Action("Index", "Home")'">Back</button>
 
                 </div>
             </div>
             <br />&nbsp;<br />
         </div>
         <div>
-            <button type="button" class="btn btn-primary" style="float:right" onclick="location.href='@Url.Action("Index", "Home")'">
-                Back
-            </button>
+           
         </div>
 
         <br />&nbsp;<br />

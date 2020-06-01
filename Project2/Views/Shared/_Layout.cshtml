@@ -7,7 +7,98 @@
     //TimeSpan timeAdded = new TimeSpan();
 
 }
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        box-sizing: border-box;
+    }
 
+    body {
+        height: 100vh;
+    }
+
+    .menu-area li a {
+        text-decoration: none;
+    }
+
+    .menu-area li {
+        list-style-type: none;
+    }
+
+    .custom-padding {
+        padding-top: -120px;
+        margin-top:65px;
+        height:100px;
+        
+    }
+    nav {
+        position: relative;
+        width: calc(100% - 60px);
+        margin: 0 auto;
+        padding: 10px 0;
+        background: #333;
+        z-index: 1;
+        text-align: right;
+        padding-right: 3%;
+        height:50px;
+    }
+    .logo {
+        width: 15%;
+        float: left;
+        text-transform: uppercase;
+        color: #fdf1ec;
+        font-size: 25px;
+        text-align: left;
+        padding-left: 2%;
+    }
+    .menu-area li {
+        display: inline-block;
+    }
+    .menu-area a {
+        color: #fdf1ec;
+        font-weight: 300;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        display: block;
+        padding: 0 25px;
+        font-size: 14px;
+        line-height: 30px;
+        position: relative;
+        z-index: 1;
+    }
+        .menu-area a:hover {
+            background: #fdf1ec;
+            color:black;
+        }
+
+            .menu-area a:hover:after {
+                transform: translateY(-50%) rotate(-35deg);
+            }
+    nav:before {
+        position: absolute;
+        content: '';
+        border-top: 10px solid white;
+        border-right: 10px solid white;
+        border-left: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        top: 100%;
+        left: 0;
+    }
+
+    nav:after {
+        position: absolute;
+        content: '';
+        border-top: 10px solid white;
+        border-left: 10px solid white;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        top: 100%;
+        right: 0;
+    }
+
+</style>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,29 +113,19 @@
     {
         <script>alert("product is already added");</script>
     }
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("EMarket", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                </ul>
-                <div class="navbar-right">
-                    <!-- Button trigger modal  hna da el zorar bta3 el cart bta3tk-->
-                    <a data-toggle="modal" data-target="#cartModal"> GO TO CART LIST </a>
-                </div>
-            </div>
-        </div>
+    <div class="custom-padding">
+        <nav class="navbar navbar-expand-md" style="margin-top:-115px;">
+            <div class="logo">logo</div>
+            <ul class="menu-area">
+                <li><a href="#">@Html.ActionLink("EMarket", "Index", "Home", new { area = "" })</a></li>
+                <li><a href="#">@Html.ActionLink("Shop", "Index", "Home", new { area = "" })</a></li>
+                <li><a data-toggle="modal" data-target="#cartModal" style="cursor:pointer"> GO TO CART LIST </a></li>
+                <li><a href="#">@Html.ActionLink("Add New Product", "AddProduct", "Home", new { area = "" })</</a></li>
+                <li><a href="#">@Html.ActionLink("Contact", "Index", "Home", new { area = "" })</a></li>
+            </ul>
+        </nav>
     </div>
-
-    <!-- Modal hna da goz2 el cart -->
+     @*Modal hna da goz2 el cart*@ 
     <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

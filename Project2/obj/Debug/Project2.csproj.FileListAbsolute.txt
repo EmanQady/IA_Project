@@ -330,3 +330,5 @@ C:\Users\LENOVO.SXM4\source\repos\IA_project3\Project2\obj\Debug\Project2.pdb
 D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\obj\Debug\Project2.Migrations.ProductMigration.resources
 D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\obj\Debug\Project2.Migrations.ProductMigration1.resources
 D:\FCIH\Level 3\Second Term\IA\PROJECT\Project2\Project2\obj\Debug\Project2.csprojAssemblyReference.cache
+C:\Users\LENOVO.SXM4\source\repos\IA_project3\Project2\obj\Debug\Project2.Migrations.ProductMigration.resources
+C:\Users\LENOVO.SXM4\source\repos\IA_project3\Project2\obj\Debug\Project2.Migrations.ProductMigration1.resources
