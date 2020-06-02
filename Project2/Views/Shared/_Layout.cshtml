@@ -152,8 +152,8 @@
                         @*<span aria-hidden="true">&times;</span>*@
                     </button>
                 </div>
-                <div class="modal-body" style="color: #fdf1ec">
-                    <table class="table-hover ">
+                <div class="modal-body" style="color: black">
+                    <table class="table-hover">
                         @foreach (var product in ViewBag.cart)
                         {
                             foreach (var item in ViewBag.product)
@@ -165,8 +165,8 @@
                                             <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("RemoveFromCart", "Home", new { id = item.Id })'">REMOVE</button>
                                         </td>
                                         <td class="table-bordered" style="padding:10px">
-                                            <p style="font-weight:bold">@item.Name — @item.Price EGP </p>
-                                            <p style="font-style:oblique">Added to cart @DateTime.Now.Subtract(product.Added_At).Hours hours ago.</p>
+                                            <p style="font-weight: bold;">@item.Name — @item.Price EGP </p>
+                                            <p style="font-style: oblique;">Added to cart @DateTime.Now.Subtract(product.Added_At).Hours hours ago.</p>
                                         </td>
 
                                     </tr>

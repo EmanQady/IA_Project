@@ -14,7 +14,7 @@
         height: 520px;
         width: 654px;
         margin: 50px auto;
-        border-radius: 10px 10px 50px 10px;
+        border-radius: 11px 10px 10px 10px;
         -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
@@ -154,36 +154,37 @@
             .card-stats .stat button:hover {
                 background-color: #79b0a1;
             }
+    .panel-footer{
+        background-color:black;
+
+    }
 </style>
 <body>
-    <div class="wrapper" style="margin-top:-2px;">
-        <div class="product-img">
-            <img src="@Url.Content("~/Content/Images/" +Model.Image)" alt="@Model.Image" height="420" ; width="327" />
+    <div class="wrapper" style="margin-top: -2px;background-color: black;opacity: 0.8">
+        <div class="product-img" style="background-color: #fdf1ec">
+            <img src="@Url.Content("~/Content/Images/" +Model.Image)" alt="@Model.Image" height="520" ; width="327" style="opacity:2"/>
         </div>
-        <div class="product-info">
-            <div class="product-text">
-                <h1>@Html.DisplayFor(model => model.Name)</h1>
-                <h2>@Html.DisplayFor(model => model.Category.Name)</h2>
-                <p>@Html.DisplayFor(model => model.Description)</p>
+        <div class="product-info" style="background-color: black;">
+            <div class="product-text" style="color: #fdf1ec">
+                <h1 style="color: #fdf1ec">@Html.DisplayFor(model => model.Name)</h1>
+                <h2 style="color: #fdf1ec">@Html.DisplayFor(model => model.Category.Name)</h2>
+                <p style="color: #fdf1ec">@Html.DisplayFor(model => model.Description)</p>
             </div>
-            <div class="product-price-btn">
-                <p><span>@Html.DisplayFor(model => model.Price)</span>EGP</p>
+            <div class="product-price-btn" style="background-color:black">
+                <p style="color: #fdf1ec"><span>@Html.DisplayFor(model => model.Price)</span>EGP</p>
             </div>
             <div class="panel-footer">
                 <div>
                     @Html.ActionLink("Update", "UpdateProduct", "Home", new { id = Model.Id }, new { @class = "btn btn-warning" })
                     @Html.ActionLink("Delete", "DeleteProduct", "Home", new { id = Model.Id }, new { @class = "btn btn-danger" })
                     <button type="button" class="btn btn-primary" style="" onclick="location.href='@Url.Action("Index", "Home")'">Back</button>
-
                 </div>
             </div>
             <br />&nbsp;<br />
         </div>
         <div>
-           
         </div>
-
-        <br />&nbsp;<br />
+       
     </div>
 
 
